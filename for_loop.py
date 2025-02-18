@@ -21,7 +21,14 @@ for intento in range (intentos):
     print('Que numero crees que estoy pensando')
     print('Tienes '+ str(intentos) + ' intentos')
     intentos -=1
-    entrada=int(input())
+    # entrada=int(input())
+    try:
+        entrada=int(input())
+    except ValueError:
+        print('El valor ingresado no es un numero, perdiste un intento te quedan '+str(intentos) +' intentos')
+        #al usar continue en cualquier loop, se para y reinicia
+        continue
+
     if numero == entrada:
         print('Felicidades es correcto! El numero es: '+ str(numero))
         print('Adivinaste usando '+ str(intento+1) + ' intentos')
