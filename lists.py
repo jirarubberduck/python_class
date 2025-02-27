@@ -50,38 +50,78 @@ print(lista_juntos)
 #el significado
 
 #operadores IN y NOT
-existo='Jesus' in ['Bruno','Angel','Diana','Jesus']
-seguro_nohay_adalberto='Adalberto' not in ['Bruno','Angel','Diana','Jesus']
-print('Existo? :'+str(existo))
-print('Seguro que no existe Adalberto? :'+str(seguro_nohay_adalberto))
+# existo='Jesus' in ['Bruno','Angel','Diana','Jesus']
+# seguro_nohay_adalberto='Adalberto' not in ['Bruno','Angel','Diana','Jesus']
+# print('Existo? :'+str(existo))
+# print('Seguro que no existe Adalberto? :'+str(seguro_nohay_adalberto))
 
-#nombra la lista que va a guardar los datos
-nombres_de_gatos=[]
+#for tradicional en Python
+#estos metodos tienen estas cosas en comun:
+escritorio = ['pluma', 'teclado', 'monitor']
+#Metodo 1-
+for i in range(4):
+    print(i)
 
-# def nombrar_gatos():
-#     nombre_de_gato=input('Ingresa el nombre de un gato')
-#     return nombre_de_gato
+for i in range(len(escritorio)):
+    print(str(i+1) + ' ' + escritorio[i])
 
-#pedir nombres de gatos en loop
-while True:
-    nombre_de_gato = input('Ingresa el nombre del gato '+str(len(nombres_de_gatos)+1)+' (o solo da enter para parar y ver la lista) \n')
-    #si el nombre del gato ya existe decir 'ese nombre para gato ya existe ingresa uno diferente'
-    if nombre_de_gato in nombres_de_gatos:
-        print('Ese nombre para gato ya existe ingresa uno diferente')
-        continue
-    #hasta que el usuario ingrese un string vacio
-    if nombre_de_gato=='':
-        break
-    #agregar nombre_de_gato a la lista va despues del break si no crearia una entrada EMPTY
-    nombres_de_gatos=nombres_de_gatos+[nombre_de_gato]
+#Metodo 2- enumerate
+for index,item in enumerate(escritorio):
+    print(str(index +1) + ' ' + item)
 
-#al final debe imprimir los nombres con un header de 'Los nombres de los gatos son:' y terminar el programa
-print('Los nombres de los gatos son:')
-for nombre_de_gato in nombres_de_gatos:
-    print(nombre_de_gato)
-#checar si Michi esta en la lista, si no mencionarlo
-print()
-if 'Michi' not in nombres_de_gatos:
-    print('Que curioso que no tienes un gato llamado Michi')
-elif 'Michi' in nombres_de_gatos:
-    print('Si te acordaste de Michi! Nice!')
+#Multiple assignments (unpacking) desempacar una lista
+hijo = ['small', 'cute', 'mischief']
+# size = hijo[0]
+# appeal = hijo[1]
+# behavior = hijo[2]
+
+#pythonic way
+size,appeal,behavior=hijo
+
+print(size, appeal, behavior, sep=',')
+
+import random
+
+print(random.choice(hijo))
+#shuffle de random
+random.shuffle(hijo)
+print(hijo)
+
+#Methods vs Functions
+#Una funcion se le pasa un valor (es independiente y funciona sola, es luchona vaya)
+#Las funciones suelen ser utilerias ejemplo: sacar un promedio o imprime algo
+#Un metodo es lo opuesto, corresponde a un objeto es su funcionalidad
+#va ligado intrinsecamente a un objeto ejemplo: persona.digerir() persona.respirar()
+
+saludos = ['Hola', 'Buen dia', 'god dag', 'Hello']
+saludos.index('Buen dia')
+
+#Agregando valores a una lista
+#Metodo 1- con append lo agrega en el ultimo index de la lista
+#Metodo 2- con insert lo agrega a un index especifico
+saludos.append('Bonjour')
+
+saludos.insert(1,'Hallo')
+
+print(saludos)
+
+#Remover valores de la lista
+saludos.remove('Hola')
+
+print(saludos)
+
+#Ordenado de listas alfabeticamente
+saludos.sort()
+print(saludos)
+#al reves
+saludos.sort(reverse=True)
+print(saludos)
+#considerar las minusculas asi no se van al final, jerarquia primer Caps - lower
+saludos.sort(key=str.lower)
+print(saludos)
+
+#como definir una lista vacia
+lista=[]
+#como asignar el valor Hello como el 3 valor en una lista con 4 numeros
+spam=['uno', 'dos', 'tres', 'cuatro']
+spam[2]='Hello'
