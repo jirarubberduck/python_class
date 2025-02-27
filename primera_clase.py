@@ -47,11 +47,11 @@ efectivo=float(input())
 efectivo=30.72 + efectivo
 print(str(efectivo))
 
-Diferencia entre un valor y un operador 'valor' 7 5.4
-
-Operadores * + -
-
-Variable nombre='Jesus' String 'Jesus'
+# Diferencia entre un valor y un operador 'valor' 7 5.4
+#
+# Operadores * + -
+#
+# Variable nombre='Jesus' String 'Jesus'
 
 #Control de flujo
 #syntachtic sugar
