@@ -11,3 +11,22 @@
 4. verificar el push
 
 `git log`
+
+# Agregar un nuevo repo
+
+1. se crea el folder en git bash
+
+`mkdir python_class`
+2. entramos al directorio
+
+`cd python_class/`
+3. agregamos el repo
+
+`git init`
+
+`git remote add origin https://github.com/jirarubberduck/python_class.git`
+
+`git push -u origin master`
+4. pedimos la ubicacion
+
+`pwd`
